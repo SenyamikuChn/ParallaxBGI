@@ -8,6 +8,7 @@
 .card_crew {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 20px;
   height: 100%;
   width: 100%;
   place-items: center;

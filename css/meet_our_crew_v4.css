@@ -9,6 +9,7 @@
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
+    gap: 20px;
   /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
 }
 
