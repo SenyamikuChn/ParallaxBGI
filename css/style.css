@@ -50,8 +50,7 @@ footer.page-footer {
 
 .logo-img {
   max-width: 200px; /* Ubah ukuran maksimum sesuai kebutuhan */
-  height: 60px;
-
+  /* height: 60px; */
   /* width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -73,7 +72,7 @@ footer.page-footer {
 
 .nav-wrapper img {
   height: 50px;
-  margin-top: 5%;
+  margin-top: 5px;
 }
 
 h3 {
@@ -83,4 +82,18 @@ h3 {
   background-color: #efefef;
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.brand-name {
+  display: inline-block;
+  color: white;
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+}
+
+.text-orange {
+  color: orange;
 }
