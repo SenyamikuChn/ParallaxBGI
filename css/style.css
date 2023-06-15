@@ -62,6 +62,8 @@ footer.page-footer {
 
 .colorNav {
   background-color: rgb(52, 52, 52);
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+
   color: white;
   display: flex;
 }

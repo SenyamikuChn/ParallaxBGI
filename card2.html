@@ -12,10 +12,119 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Poppins', sans-serif; */
+}
+.card_crew {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100%;
+  width: 100%;
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+}
+@media screen and (min-width: 768px) {
+  .card_crew {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card_crew {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+::selection {
+  color: #fff;
+  background: #1cc7d0;
+}
+.wrappers {
+  height: 400px;
+  width: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  margin: 50px 0;
+}
+.wrappers .card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.wrappers:hover > .front-face {
+  transform: rotateY(-180deg);
+}
+.wrappers .card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.wrappers .back-face {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.wrappers:hover > .back-face {
+  transform: rotateY(0deg);
+}
+.wrappers .back-face img {
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
+}
+.wrappers .back-face .info {
+  text-align: center;
+}
+.back-face .info .title {
+  font-size: 30px;
+  font-weight: 500;
+}
+.back-face ul {
+  display: flex;
+}
+.back-face ul a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
+  transition: all 0.5s ease;
+}
+.back-face ul a:hover {
+  color: #1cc7d0;
+  border-color: #1cc7d0;
+  background: linear-gradient(375deg, transparent, transparent);
+}
+.color-nav {
+    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+
+}
+
+    </style>
   </head>
   <body>
-    
-    <nav class="colorNav" role="navigation">
+    <nav class="color-nav" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="./index.html" class="brand-logo">
           <img class="logo-img" src="./img/[COPY2_ID]_LOGO+TEKS.png" alt="Kinaya Prima Logo" />
@@ -41,8 +150,12 @@
     </nav>
 
     <h3>Meet Our Crew</h3>
-    <div class="card_crew">
+    
+    <div class=" container card_crew">
       <div class="wrappers">
+        <div class="card front-face">
+          <img src="img/IMG-20230614-WA0041.jpg" />
+        </div>
         <div class="card back-face">
           <img src="img/IMG-20230614-WA0017.jpg" />
           <div class="info">
@@ -58,6 +171,9 @@
         </div>
       </div>
       <div class="wrappers">
+        <div class="card front-face">
+          <img src="img/COPY_IMG_20230614_101636.jpg" />
+        </div>
         <div class="card back-face">
           <img src="img/COPY_IMG_20230614_101636.jpg" />
           <div class="info">
@@ -72,7 +188,26 @@
           </ul>
         </div>
       </div>
+      <div class="wrappers">
+        <div class="card front-face">
+          <img src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
+        </div>
+        <div class="card back-face">
+          <img src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
+          <div class="info">
+            <div class="title">Undefined</div>
+            <p>User interface designer and <br />front-end developer</p>
+          </div>
+          <ul>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </ul>
+        </div>
+      </div>
     </div>
+
 
     <footer class="page-footer teal">
       <div class="container">

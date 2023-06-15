@@ -1,55 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meet Our Crew</title>
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="css/meet_our_crew_v4.css" />
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <style>
-      .card {
-        /* background:linear-gradient(#03DAC6, #018786); */
-        width: 300px;
+      @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* font-family: 'Poppins', sans-serif; */
+      }
+      .card_crew {
+        display: grid;
+        /* justify-content: space-around; */
+        grid-template-columns: 1fr;
+        /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+      }
+
+      @media screen and (min-width: 768px) {
+        .card_crew {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .card_crew {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      .wrappers {
         height: 400px;
-        border: 3px solid grey;
+        width: 320px;
         position: relative;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        margin: 50px 0;
       }
-      span {
-        background-color: #1e225b;
-        width: 300px;
+      .wrappers .card {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        padding: 5px;
+        background: #fff;
+        border-radius: 10px;
+        transform: translateY(0deg);
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      }
+      /* .wrappers:hover > .front-face {
+transform: rotateY(-180deg);
+} */
+      .wrappers .card img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .wrappers .back-face {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        transform: rotateY(0deg);
+      }
+      /* .wrappers:hover > .back-face {
+transform: rotateY(0deg);
+} */
+      .wrappers .back-face img {
         height: 150px;
-        position: absolute;
-      }
-      .profile {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        padding: 5px;
         border-radius: 50%;
-        position: absolute;
-        left: 100px;
-        top: 100px;
+        background: linear-gradient(375deg, #1cc7d0, #2ede98);
       }
-      .brand {
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        z-index: 1;
+      .wrappers .back-face .info {
+        text-align: center;
+      }
+      .back-face .info .title {
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .back-face ul {
+        display: flex;
+      }
+      .back-face ul a {
+        display: block;
+        height: 40px;
+        width: 40px;
+        color: #fff;
+        text-align: center;
+        margin: 0 5px;
+        line-height: 38px;
+        border: 2px solid transparent;
         border-radius: 50%;
-        top: 20px;
-        left: 30px;
+        background: linear-gradient(375deg, #1cc7d0, #2ede98);
+        transition: all 0.5s ease;
       }
-      .information {
-        position: absolute;
-        bottom: 50px;
-        background-color: aquamarine;
+      .back-face ul a:hover {
+        color: #1cc7d0;
+        border-color: #1cc7d0;
+        background: linear-gradient(375deg, transparent, transparent);
       }
     </style>
   </head>
   <body>
-    <div class="card">
-      <!-- <img src="./" alt="brand_image" class="brand"> -->
-      <span></span>
-      <img src="./img/Kiyowo.jpg" alt="profile_image"  class="profile"/>
-      <div class="information">
-        <h3>name</h3>
+    <nav class="colorNav" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="./index.html" class="brand-logo">
+          <img class="logo-img" src="./img/[COPY2_ID]_LOGO+TEKS.png" alt="Kinaya Prima Logo" />
+          <span class="brand-name">KINAY<span class="text-orange">A</span></span>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="./index.html" class="text-primary">Home</a></li>
+          <li><a href="./meet_our_crew.html" class="text-primary">Meet Our Crew</a></li>
+          <li><a href="./meet_our_crew_v2.html" class="text-primary">Meet Our Crew v2</a></li>
+          <li><a href="./meet_our_crew_v3.html" class="text-primary">Meet Our Crew v3</a></li>
+          <li><a href="./meet_our_crew_v4.html" class="text-primary">Meet Our Crew v4</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./meet_our_crew.html">Meet Our Crew</a></li>
+          <li><a href="./meet_our_crew_v2.html">Meet Our Crew v2</a></li>
+          <li><a href="./meet_our_crew_v3.html">Meet Our Crew v3</a></li>
+          <li><a href="./meet_our_crew_v4.html">Meet Our Crew v4</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+
+    <h3>Meet Our Crew</h3>
+    <div class="card_crew">
+      <div class="wrappers">
+        <div class="card back-face">
+          <img src="img/IMG-20230614-WA0017.jpg" />
+          <div class="info">
+            <div class="title">Baggi Rizqi Kurnia Sopandi</div>
+            <p>User interface designer and <br />front-end developer</p>
+          </div>
+          <ul>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </ul>
+        </div>
+      </div>
+      <div class="wrappers">
+        <div class="card back-face">
+          <img src="img/COPY_IMG_20230614_101636.jpg" />
+          <div class="info">
+            <div class="title">Taufik Hidayat</div>
+            <p>User interface designer and <br />front-end developer</p>
+          </div>
+          <ul>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </ul>
+        </div>
+      </div>
+      <div class="wrappers">
+        <div class="card back-face">
+          <img src="img/IMG-20230614-WA0017.jpg" />
+          <div class="info">
+            <div class="title">Baggi Rizqi Kurnia Sopandi</div>
+            <p>User interface designer and <br />front-end developer</p>
+          </div>
+          <ul>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </ul>
+        </div>
       </div>
     </div>
+
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Company Bio</h5>
+            <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Settings</h5>
+            <ul>
+              <li><a class="white-text" href="#!">Link 1</a></li>
+              <li><a class="white-text" href="#!">Link 2</a></li>
+              <li><a class="white-text" href="#!">Link 3</a></li>
+              <li><a class="white-text" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Connect</h5>
+            <ul>
+              <li><a class="white-text" href="./meet_our_crew.html">Meet Our Crew</a></li>
+              <li><a class="white-text" href="#!">Link 2</a></li>
+              <li><a class="white-text" href="#!">Link 3</a></li>
+              <li><a class="white-text" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container"></div>
+      </div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

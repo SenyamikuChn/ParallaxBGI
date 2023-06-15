@@ -3,29 +3,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 .card_crew {
   display: grid;
-  height: 100%;
-  width: 100%;
-  /* grid-auto-flow: column;
-grid-template-columns: 2fr 1fr auto;*/
+  grid-template-columns: 1fr;
   place-items: center;
   /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
-  background-color: #efefef;
 }
-::selection {
-  color: #fff;
-  background: #1cc7d0;
+
+@media screen and (min-width: 768px) {
+  .card_crew {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
 .wrappers {
   height: 400px;
   width: 320px;
   position: relative;
   transform-style: preserve-3d;
   perspective: 1000px;
-  margin: 50px 0;
 }
 .wrappers .card {
   position: absolute;

@@ -3,16 +3,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 .card_crew {
   display: grid;
+  grid-template-columns: 1fr;
   height: 100%;
   width: 100%;
   place-items: center;
   /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
-  background-color: #EFEFEF;;
 }
+
+@media screen and (min-width: 768px) {
+  .card_crew {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card_crew {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 ::selection {
   color: #fff;
   background: #1cc7d0;
@@ -23,7 +35,6 @@
   position: relative;
   transform-style: preserve-3d;
   perspective: 1000px;
-  margin: 50px 0;
 }
 .wrappers .card {
   position: absolute;
